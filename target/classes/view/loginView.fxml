@@ -27,12 +27,12 @@
             <Font size="18.0" />
          </font>
       </PasswordField>
-      <Button fx:id="btn_login" layoutX="103.0" layoutY="287.0" mnemonicParsing="false" onAction="#loginAction" onMouseEntered="#enterMouseAction" onMouseExited="#exitMouseAction" prefHeight="39.0" prefWidth="169.0" style="-fx-background-color: lightgreen;" text="zaloguj">
+      <Button fx:id="btn_login" layoutX="103.0" layoutY="287.0" mnemonicParsing="false" onAction="#loginAction" onMouseEntered="#enterMouseAction" onMouseExited="#exitMouseAction" prefHeight="39.0" prefWidth="169.0" text="zaloguj">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button fx:id="btn_register" layoutX="327.0" layoutY="287.0" mnemonicParsing="false" onAction="#registerAction" onMouseEntered="#enterRegisterMouseAction" onMouseExited="#exitRegisterMouseAction" prefHeight="39.0" prefWidth="169.0" style="-fx-background-color: yellow;" text="zarejestruj">
+      <Button fx:id="btn_register" layoutX="327.0" layoutY="287.0" mnemonicParsing="false" onAction="#registerAction" onMouseEntered="#enterRegisterMouseAction" onMouseExited="#exitRegisterMouseAction" prefHeight="39.0" prefWidth="169.0" text="zarejestruj">
          <font>
             <Font size="18.0" />
          </font>

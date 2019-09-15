@@ -12,8 +12,12 @@ public class Main extends Application {
         Parent resource = FXMLLoader.load(getClass().getResource("view/loginView.fxml"));
         // Ustawiamy tytuł okna
         primaryStage.setTitle("Panel logowania");
+        Scene scene = new Scene(resource);
+        // dodanie stylów do scene
+        scene.getStylesheets().add("css/init.css");
         // Ustawiamy zasób fxml w stage-u
-        primaryStage.setScene(new Scene(resource));
+        primaryStage.setScene(scene);
+
         // Powoduje zatrzymianie okna na ekranie
         primaryStage.show();
     }

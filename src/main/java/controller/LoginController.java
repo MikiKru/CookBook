@@ -2,6 +2,7 @@ package controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -24,6 +25,7 @@ public class LoginController {
     private Label lbl_error;
     // pola globalne
     private LoginService loginService;
+
     // metoda implementująca instrukcje rozpoczynające działanie aplikacji
     public void initialize(){
         loginService = new LoginService();
@@ -43,10 +45,7 @@ public class LoginController {
     void registerAction(ActionEvent event) {
 
     }
-    @FXML
-    void exitMouseAction(MouseEvent mouseEvent) {
-        loginService.setButtonColor(btn_login, "lightgreen");
-    }
+
     @FXML
     void enterMouseAction(MouseEvent mouseEvent) {
         loginService.setButtonColor(btn_login, "lightgrey");
@@ -54,6 +53,11 @@ public class LoginController {
     @FXML
     void enterRegisterMouseAction(MouseEvent event) {
         loginService.setButtonColor(btn_register, "lightgrey");
+    }
+    @FXML
+    void exitMouseAction(MouseEvent mouseEvent) {
+        loginService.setButtonColor(btn_login, "lightgreen");
+
     }
     @FXML
     void exitRegisterMouseAction(MouseEvent event) {

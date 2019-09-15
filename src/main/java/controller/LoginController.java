@@ -46,10 +46,18 @@ public class LoginController {
     @FXML
     void exitMouseAction(MouseEvent mouseEvent) {
         loginService.setButtonColor(btn_login, "lightgreen");
-
     }
     @FXML
     void enterMouseAction(MouseEvent mouseEvent) {
         loginService.setButtonColor(btn_login, "lightgrey");
     }
+    @FXML
+    void enterRegisterMouseAction(MouseEvent event) {
+        loginService.setButtonColor(btn_register, "lightgrey");
+    }
+    @FXML
+    void exitRegisterMouseAction(MouseEvent event) {
+        loginService.setButtonColor(btn_register, "yellow");
+    }
+
 }

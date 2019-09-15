@@ -1,5 +1,6 @@
 package service;
 
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -15,5 +16,8 @@ public class LoginService {
             lbl_error.setText("błąd logowania");
             lbl_error.setStyle("-fx-text-fill: red");
         }
+    }
+    public void setButtonColor(Button button, String color){
+        button.setStyle("-fx-background-color: " + color);
     }
 }

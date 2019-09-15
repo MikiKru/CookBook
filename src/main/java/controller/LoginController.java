@@ -5,6 +5,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import service.LoginService;
 
 public class LoginController {
     @FXML
@@ -13,16 +16,22 @@ public class LoginController {
     private PasswordField pf_password;
     @FXML
     private Label lbl_error;
-
+    // pola globalne
+    private LoginService loginService;
+    // metoda implementująca instrukcje rozpoczynające działanie aplikacji
+    public void initialize(){
+        loginService = new LoginService();
+    }
+    @FXML
+    void keyLoginAction(KeyEvent keyEvent) {
+        // nasłuchiwanie na enter
+        if(keyEvent.getCode() == KeyCode.ENTER) {
+            loginService.login(lbl_error, tf_login, pf_password);
+        }
+    }
     @FXML
     void loginAction(ActionEvent event) {
-        if(tf_login.getText().equals("user") && pf_password.getText().equals("user")){
-            lbl_error.setText("zalogowano");
-            lbl_error.setStyle("-fx-text-fill: blue");
-        } else {
-            lbl_error.setText("błąd logowania");
-            lbl_error.setStyle("-fx-text-fill: red");
-        }
+        loginService.login(lbl_error,tf_login,pf_password);
     }
     @FXML
     void registerAction(ActionEvent event) {

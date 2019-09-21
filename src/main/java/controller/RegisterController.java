@@ -2,14 +2,16 @@ package controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import service.RegisterService;
+import service.WindowService;
+
+import java.io.IOException;
 
 public class RegisterController {
+
     @FXML
     private TextField tf_login;
     @FXML
@@ -26,9 +28,24 @@ public class RegisterController {
     private TextField tf_password;
     @FXML
     private TextField tf_password_confirm;
-
     @FXML
-    void backAction(ActionEvent event) { }
+    private CheckBox cb_showPassword;
+    // obiekty globalne
+    private WindowService windowService;
+    private RegisterService registerService;
+    public void initialize(){
+        windowService = new WindowService();
+        registerService = new RegisterService();
+    }
+    @FXML
+    void showPasswordAction(ActionEvent event) {
+        registerService.showPassword(cb_showPassword,tf_password,pf_password,tf_password_confirm,pf_password_confirm);
+    }
+    @FXML
+    void backAction(ActionEvent event) throws IOException {
+        windowService.openNewWindow("/view/loginView.fxml","Panel logowania");
+        windowService.closeCurrentWindow(lbl_error);
+    }
     @FXML
     void enterMouseAction(MouseEvent event) { }
     @FXML
@@ -41,7 +58,6 @@ public class RegisterController {
     void keyRegisterAction(KeyEvent event) { }
     @FXML
     void registerAction(ActionEvent event) { }
-    @FXML
-    void showPasswordAction(ActionEvent event) { }
+
 
 }

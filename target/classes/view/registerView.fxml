@@ -27,6 +27,21 @@
             <Font size="18.0" />
          </font>
       </PasswordField>
+      <TextField fx:id="tf_password" alignment="CENTER" layoutX="188.0" layoutY="200.0" promptText="podaj hasło" visible="false">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="pf_password_confirm" alignment="CENTER" layoutX="188.0" layoutY="251.0" promptText="powtórz hasło">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </PasswordField>
+      <TextField fx:id="tf_password_confirm" alignment="CENTER" layoutX="188.0" layoutY="251.0" promptText="powtórz hasło" visible="false">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
       <Button fx:id="btn_register" layoutX="103.0" layoutY="332.0" mnemonicParsing="false" onAction="#registerAction" onMouseEntered="#enterMouseAction" onMouseExited="#exitMouseAction" prefHeight="39.0" prefWidth="169.0" styleClass="btn_login" text="zarejestruj">
          <font>
             <Font size="18.0" />
@@ -42,25 +57,10 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <PasswordField fx:id="pf_password_confirm" alignment="CENTER" layoutX="188.0" layoutY="251.0" promptText="powtórz hasło">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </PasswordField>
       <CheckBox fx:id="cb_showPassword" layoutX="427.0" layoutY="211.0" mnemonicParsing="false" onAction="#showPasswordAction" prefHeight="20.0" prefWidth="113.0" text="pokaż hasło">
          <font>
             <Font size="14.0" />
          </font>
       </CheckBox>
-      <TextField fx:id="tf_password" alignment="CENTER" layoutX="188.0" layoutY="200.0" promptText="podaj hasło" visible="false">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </TextField>
-      <TextField fx:id="tf_password_confirm" alignment="CENTER" layoutX="188.0" layoutY="251.0" promptText="powtórz hasło" visible="false">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </TextField>
    </children>
 </AnchorPane>

@@ -4,9 +4,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class WindowService {
     public void openNewWindow(String windowPath, String title) throws IOException {
@@ -24,5 +27,16 @@ public class WindowService {
         Stage currentStage = (Stage) node.getScene().getWindow();
         // zamknij stage-a
         currentStage.close();
+    }
+    public void getConfrimationAlert(String title, String content){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle(title);
+        alert.setContentText(content);
+        Optional<ButtonType> result = alert.showAndWait();
+        if (result.get() == ButtonType.OK){
+            // ... user chose OK
+        } else {
+            // ... user chose CANCEL or closed the dialog
+        }
     }
 }

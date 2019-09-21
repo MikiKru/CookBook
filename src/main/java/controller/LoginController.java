@@ -46,8 +46,11 @@ public class LoginController {
         }
     }
     @FXML
-    void loginAction(ActionEvent event) {
-        loginService.login(lbl_error,tf_login,pf_password);
+    void loginAction(ActionEvent event) throws IOException {
+        if(loginService.login(lbl_error,tf_login,pf_password)) {
+            windowService.openNewWindow("/view/cookbookView.fxml", "Książka kucharska");
+            windowService.closeCurrentWindow(lbl_error);
+        }
     }
     @FXML
     void enterMouseAction(MouseEvent mouseEvent) {

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class LoginService {
-    public void login(Label lbl_error, final TextField tf_login, final PasswordField pf_password){
+    public boolean login(Label lbl_error, final TextField tf_login, final PasswordField pf_password){
         lbl_error.setVisible(true);
 
         Optional<User> loggedUser = InMemoryDB.users.stream()
@@ -21,9 +21,11 @@ public class LoginService {
         if(loggedUser.isPresent()){
             lbl_error.setText("zalogowano");
             lbl_error.setStyle("-fx-text-fill: blue");
+            return true;
         } else {
             lbl_error.setText("błąd logowania");
             lbl_error.setStyle("-fx-text-fill: red");
+            return false;
         }
     }
     public void setButtonColor(Button button, String color){

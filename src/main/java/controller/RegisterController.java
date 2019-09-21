@@ -9,6 +9,7 @@ import service.RegisterService;
 import service.WindowService;
 
 import java.io.IOException;
+import java.util.Optional;
 
 public class RegisterController {
 
@@ -88,11 +89,20 @@ public class RegisterController {
                 if (registerService.passwordsEquality(
                         cb_showPassword, tf_password, pf_password, tf_password_confirm, pf_password_confirm, lbl_error)) {
                     System.out.println("rejestrujemy");
-                    registerService.saveUser(tf_login,cb_showPassword,tf_password,pf_password);
-                    registerService.clearField(tf_login,tf_password,tf_password_confirm,pf_password,pf_password_confirm);
-                    lbl_error.setVisible(true);
-                    lbl_error.setText("ZAREJESTROWANO UŻYTKOWNIKA");
-                    lbl_error.setStyle("-fx-text-fill: blue");
+                    Optional<ButtonType> confirm = windowService
+                            .getConfrimationAlert("Potwierdzenie rejestracji",
+                                    "Potwierdź dane rejestracji\nlogin: "+tf_login.getText()+"\nhasło: "+pf_password.getText());
+                    if(confirm.get() == ButtonType.OK) {
+                        registerService.saveUser(tf_login, cb_showPassword, tf_password, pf_password);
+                        lbl_error.setVisible(true);
+                        lbl_error.setText("ZAREJESTROWANO UŻYTKOWNIKA "+ tf_login.getText().toUpperCase());
+                        registerService.clearField(tf_login, tf_password, tf_password_confirm, pf_password, pf_password_confirm);
+                        lbl_error.setStyle("-fx-text-fill: blue");
+                    } else {
+                        lbl_error.setVisible(true);
+                        lbl_error.setText("REJESTRACJA ODRZUCONA");
+                        lbl_error.setStyle("-fx-text-fill: red");
+                    }
                 }
             }
         }

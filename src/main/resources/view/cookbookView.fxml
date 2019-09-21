@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CookbookController">
+   <children>
+      <MenuBar maxWidth="1.7976931348623157E308">
+        <menus>
+          <Menu mnemonicParsing="false" text="Plik">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#logoutAction" text="wyloguj" />
+            </items>
+          </Menu>
+        </menus>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+      </MenuBar>
+      <TabPane prefHeight="514.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="PRZEPISY">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Separator layoutX="300.0" orientation="VERTICAL" prefHeight="347.0" prefWidth="3.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" />
+                        <ComboBox layoutX="56.0" layoutY="24.0" onAction="#getReciepeAction" prefHeight="26.0" prefWidth="199.0" promptText="wyszukaj przepis" />
+                        <VBox layoutX="313.0" layoutY="24.0" prefHeight="298.0" prefWidth="270.0">
+                           <children>
+                              <Label prefHeight="18.0" prefWidth="345.0" text="rodzaj potrawy" textAlignment="CENTER" />
+                              <TextField fx:id="tf_type" editable="false" prefHeight="26.0" prefWidth="266.0" promptText="rodzaj potrawy" />
+                              <Label prefHeight="18.0" prefWidth="345.0" text="stopień trudności" textAlignment="CENTER" />
+                              <TextField fx:id="tf_level" editable="false" prefHeight="26.0" prefWidth="266.0" promptText="stopień trudności" />
+                              <Label prefHeight="18.0" prefWidth="345.0" text="typ potrawy" textAlignment="CENTER" />
+                              <TextField fx:id="tf_meal" editable="false" prefHeight="26.0" prefWidth="266.0" promptText="typ potrawy" />
+                              <Label prefHeight="18.0" prefWidth="345.0" text="czas przygotowania" textAlignment="CENTER" />
+                              <TextField fx:id="tf_time" editable="false" prefHeight="26.0" prefWidth="266.0" promptText="czas przygotowania" />
+                              <Label prefHeight="18.0" prefWidth="345.0" text="składniki" textAlignment="CENTER" />
+                              <ListView fx:id="tf_ingredients" prefHeight="200.0" prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                        <VBox layoutX="22.0" layoutY="62.0" prefHeight="261.0" prefWidth="266.0">
+                           <children>
+                              <TextField fx:id="tf_title" editable="false" prefHeight="26.0" prefWidth="266.0" promptText="tytuł" />
+                              <TextArea fx:id="ta_description" editable="false" prefHeight="86.0" prefWidth="266.0" promptText="opis" />
+                              <ImageView fx:id="iv_image" fitHeight="151.0" fitWidth="175.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/intro.png" />
+                                 </image>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Untitled Tab 2">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</VBox>

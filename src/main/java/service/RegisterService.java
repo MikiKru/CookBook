@@ -37,17 +37,23 @@ public class RegisterService {
             CheckBox cb_showPassword, TextField tf_password, PasswordField pf_password,
             TextField tf_password_confirm, PasswordField pf_password_confirm, Label lbl_error){
         if(cb_showPassword.isSelected()){
-            if(!tf_password.equals(tf_password_confirm)){
+            if(!tf_password.getText().equals(tf_password_confirm.getText())){
+                lbl_error.setVisible(true);
                 lbl_error.setText("hasła nie są jednakowe");
                 return false;
+            } else {
+                lbl_error.setVisible(false);
+                return true;
             }
-            return true;
         } else {
-            if(!pf_password.equals(pf_password_confirm)){
+            if(!pf_password.getText().equals(pf_password_confirm.getText())){
                 lbl_error.setText("hasła nie są jednakowe");
+                lbl_error.setVisible(true);
                 return false;
+            } else {
+                lbl_error.setVisible(false);
+                return true;
             }
-            return true;
         }
     }
     public boolean loginCheck(TextField tf_login, Label lbl_error){
@@ -57,8 +63,10 @@ public class RegisterService {
                                     .findAny();
         if(user_valid.isPresent()){
             lbl_error.setText("Istnieje już użytkownik o podanym loginie");
+            lbl_error.setVisible(true);
             return false;
         }
+        lbl_error.setVisible(false);
         return true;
     }
 }

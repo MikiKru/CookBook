@@ -57,7 +57,11 @@ public class RegisterController {
     @FXML
     void keyRegisterAction(KeyEvent event) { }
     @FXML
-    void registerAction(ActionEvent event) { }
+    void registerAction(ActionEvent event) {
+//        boolean loginCheckResult = registerService.loginCheck(tf_login, lbl_error);
+        boolean passwordEqualityResult = registerService.passwordsEquality(
+                cb_showPassword,tf_password,pf_password,tf_password_confirm,pf_password_confirm, lbl_error);
 
+    }
 
 }

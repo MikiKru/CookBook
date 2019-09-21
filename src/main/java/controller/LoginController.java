@@ -14,6 +14,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import service.LoginService;
+import service.WindowService;
 
 import java.io.IOException;
 
@@ -30,10 +31,12 @@ public class LoginController {
     private Label lbl_error;
     // pola globalne
     private LoginService loginService;
+    private WindowService windowService;
 
     // metoda implementująca instrukcje rozpoczynające działanie aplikacji
     public void initialize(){
         loginService = new LoginService();
+        windowService = new WindowService();
     }
     @FXML
     void keyLoginAction(KeyEvent keyEvent) {
@@ -64,13 +67,7 @@ public class LoginController {
     }
     @FXML
     void registerAction(ActionEvent event) throws IOException {
-        // utworzenie obiektu sceny
-        Stage registerStage = new Stage();
-        Parent resource = FXMLLoader.load(getClass().getResource("/view/registerView.fxml"));
-        registerStage.setTitle("Panel rejestracji");
-        Scene scene = new Scene(resource);
-        scene.getStylesheets().add("css/init.css");
-        registerStage.setScene(scene);
-        registerStage.show();
+        // z serwisu WindowSerwice wywołaj metodę tworzącą nowe okno
+        windowService.openNewWindow("/view/registerView.fxml", "Panel rejestracji");
     }
 }

@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane onKeyPressed="#keyLoginAction" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: CE8BED;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+<AnchorPane onKeyPressed="#keyLoginAction" prefHeight="400.0" prefWidth="600.0" styleClass="layout" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
    <children>
       <Label layoutX="81.0" layoutY="25.0" text="PANEL LOGOWANIA">
          <font>

@@ -78,9 +78,9 @@ public class RegisterController {
                 registerService.fieldIsEmpty(tf_password_confirm.getText(), lbl_error))) {
             System.out.println("puste");
         // sprawdzenie czy pola są niepuste gdy cb nie jest zaznaczony
-        } else if (!cb_showPassword.isSelected() && registerService.fieldIsEmpty(tf_login.getText(), lbl_error) ||
+        } else if (!cb_showPassword.isSelected() && (registerService.fieldIsEmpty(tf_login.getText(), lbl_error) ||
                 registerService.fieldIsEmpty(pf_password.getText(), lbl_error) ||
-                registerService.fieldIsEmpty(pf_password_confirm.getText(), lbl_error)) {
+                registerService.fieldIsEmpty(pf_password_confirm.getText(), lbl_error))) {
             System.out.println("puste");
         // gdy pola nie są puste
         } else {
@@ -88,6 +88,7 @@ public class RegisterController {
                 if (registerService.passwordsEquality(
                         cb_showPassword, tf_password, pf_password, tf_password_confirm, pf_password_confirm, lbl_error)) {
                     System.out.println("rejestrujemy");
+
                 }
             }
         }

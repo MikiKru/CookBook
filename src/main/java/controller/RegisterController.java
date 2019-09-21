@@ -33,37 +33,63 @@ public class RegisterController {
     // obiekty globalne
     private WindowService windowService;
     private RegisterService registerService;
-    public void initialize(){
+
+    public void initialize() {
         windowService = new WindowService();
         registerService = new RegisterService();
     }
+
     @FXML
     void showPasswordAction(ActionEvent event) {
-        registerService.showPassword(cb_showPassword,tf_password,pf_password,tf_password_confirm,pf_password_confirm);
+        registerService.showPassword(cb_showPassword, tf_password, pf_password, tf_password_confirm, pf_password_confirm);
     }
+
     @FXML
     void backAction(ActionEvent event) throws IOException {
-        windowService.openNewWindow("/view/loginView.fxml","Panel logowania");
+        windowService.openNewWindow("/view/loginView.fxml", "Panel logowania");
         windowService.closeCurrentWindow(lbl_error);
     }
+
     @FXML
-    void enterMouseAction(MouseEvent event) { }
+    void enterMouseAction(MouseEvent event) {
+    }
+
     @FXML
-    void enterRegisterMouseAction(MouseEvent event) { }
+    void enterRegisterMouseAction(MouseEvent event) {
+    }
+
     @FXML
-    void exitMouseAction(MouseEvent event) { }
+    void exitMouseAction(MouseEvent event) {
+    }
+
     @FXML
-    void exitRegisterMouseAction(MouseEvent event) { }
+    void exitRegisterMouseAction(MouseEvent event) {
+    }
+
     @FXML
-    void keyRegisterAction(KeyEvent event) { }
+    void keyRegisterAction(KeyEvent event) {
+    }
+
     @FXML
     void registerAction(ActionEvent event) {
-        if(registerService.loginCheck(tf_login, lbl_error)){
-            if(registerService.passwordsEquality(
-                    cb_showPassword,tf_password,pf_password,tf_password_confirm,pf_password_confirm, lbl_error)){
-                System.out.println("rejestrujemy");
+        // sprawdzenie czy pola są niepuste gdy cb jest zaznaczony
+        if (cb_showPassword.isSelected() && (registerService.fieldIsEmpty(tf_login.getText(), lbl_error) ||
+                registerService.fieldIsEmpty(tf_password.getText(), lbl_error) ||
+                registerService.fieldIsEmpty(tf_password_confirm.getText(), lbl_error))) {
+            System.out.println("puste");
+        // sprawdzenie czy pola są niepuste gdy cb nie jest zaznaczony
+        } else if (!cb_showPassword.isSelected() && registerService.fieldIsEmpty(tf_login.getText(), lbl_error) ||
+                registerService.fieldIsEmpty(pf_password.getText(), lbl_error) ||
+                registerService.fieldIsEmpty(pf_password_confirm.getText(), lbl_error)) {
+            System.out.println("puste");
+        // gdy pola nie są puste
+        } else {
+            if (registerService.loginCheck(tf_login, lbl_error)) {
+                if (registerService.passwordsEquality(
+                        cb_showPassword, tf_password, pf_password, tf_password_confirm, pf_password_confirm, lbl_error)) {
+                    System.out.println("rejestrujemy");
+                }
             }
         }
     }
-
 }

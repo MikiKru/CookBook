@@ -1,5 +1,6 @@
 package service;
 
+import javafx.scene.Node;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
@@ -69,4 +70,15 @@ public class RegisterService {
         lbl_error.setVisible(false);
         return true;
     }
+    public boolean fieldIsEmpty(String text, Label lbl_error){
+        if(text.equals("")){
+            lbl_error.setVisible(true);
+            lbl_error.setText("pola formularza nie mogą być puste!");
+            return true;
+        }
+        lbl_error.setVisible(false);
+        return false;
+    }
+
+
 }

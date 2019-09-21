@@ -69,5 +69,6 @@ public class LoginController {
     void registerAction(ActionEvent event) throws IOException {
         // z serwisu WindowSerwice wywołaj metodę tworzącą nowe okno
         windowService.openNewWindow("/view/registerView.fxml", "Panel rejestracji");
+        windowService.closeCurrentWindow(lbl_error);
     }
 }

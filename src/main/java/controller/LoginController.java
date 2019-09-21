@@ -1,5 +1,7 @@
 package controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +15,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import model.Recipe;
 import service.LoginService;
 import service.WindowService;
 
@@ -39,10 +42,13 @@ public class LoginController {
         windowService = new WindowService();
     }
     @FXML
-    void keyLoginAction(KeyEvent keyEvent) {
+    void keyLoginAction(KeyEvent keyEvent) throws IOException {
         // nasłuchiwanie na enter
         if(keyEvent.getCode() == KeyCode.ENTER) {
-            loginService.login(lbl_error, tf_login, pf_password);
+            if(loginService.login(lbl_error,tf_login,pf_password)) {
+                windowService.openNewWindow("/view/cookbookView.fxml", "Książka kucharska");
+                windowService.closeCurrentWindow(lbl_error);
+            }
         }
     }
     @FXML

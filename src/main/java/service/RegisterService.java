@@ -79,6 +79,20 @@ public class RegisterService {
         lbl_error.setVisible(false);
         return false;
     }
-
+    public void saveUser(TextField tf_login, CheckBox cb_showPassword, TextField tf_password, PasswordField pf_password){
+        if(cb_showPassword.isSelected()){
+            InMemoryDB.users.add(new User(tf_login.getText(), tf_password.getText()));
+        } else {
+            InMemoryDB.users.add(new User(tf_login.getText(), pf_password.getText()));
+        }
+    }
+    public void clearField(TextField tf_login, TextField tf_password, TextField tf_password_confirm,
+                           PasswordField pf_password, PasswordField pf_password_confirm){
+        tf_login.clear();
+        tf_password.clear();
+        tf_password_confirm.clear();
+        pf_password.clear();
+        pf_password_confirm.clear();
+    }
 
 }

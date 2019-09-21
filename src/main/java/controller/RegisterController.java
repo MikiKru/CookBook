@@ -88,7 +88,11 @@ public class RegisterController {
                 if (registerService.passwordsEquality(
                         cb_showPassword, tf_password, pf_password, tf_password_confirm, pf_password_confirm, lbl_error)) {
                     System.out.println("rejestrujemy");
-
+                    registerService.saveUser(tf_login,cb_showPassword,tf_password,pf_password);
+                    registerService.clearField(tf_login,tf_password,tf_password_confirm,pf_password,pf_password_confirm);
+                    lbl_error.setVisible(true);
+                    lbl_error.setText("ZAREJESTROWANO UŻYTKOWNIKA");
+                    lbl_error.setStyle("-fx-text-fill: blue");
                 }
             }
         }

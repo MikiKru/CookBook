@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/CookbookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CookbookController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utility/InMemoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utility/InMemoryDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/service/CookbookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/CookbookService.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,7 +61,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/CookbookController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="325">
@@ -76,10 +76,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/service/CookbookService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="475">
+              <caret line="22" column="89" lean-forward="true" selection-start-line="22" selection-start-column="89" selection-end-line="22" selection-end-column="89" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/Ingredient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="444">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+              <folding>
+                <element signature="e#460#461#0" expanded="true" />
+                <element signature="e#526#527#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -181,7 +194,6 @@
         <option value="$PROJECT_DIR$/src/main/java/service/RegisterService.java" />
         <option value="$PROJECT_DIR$/src/main/java/service/WindowService.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/RegisterController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/model/Ingredient.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/enums/Meal.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/enums/Level.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/enums/Type.java" />
@@ -198,9 +210,10 @@
         <option value="$PROJECT_DIR$/src/main/java/exercise/Truthy.java" />
         <option value="$PROJECT_DIR$/src/main/java/exercise/MyObjects.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Recipe.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/CookbookService.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/CookbookController.java" />
         <option value="$PROJECT_DIR$/src/main/java/utility/InMemoryDB.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/CookbookService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/model/Ingredient.java" />
       </list>
     </option>
   </component>
@@ -344,7 +357,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569138988633" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1569139923414" />
     <property name="dynamic.classpath" value="false" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -505,12 +518,12 @@
       <updated>1359379246138</updated>
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1568543880988" duration="10459000" />
-      <workItem from="1569048920147" duration="24921000" />
+      <workItem from="1569048920147" duration="25555000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36682000" />
+    <option name="totallyTimeSpent" value="37316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -701,13 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/Ingredient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/exercise/Rideable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
@@ -820,16 +826,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/CookbookService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utility/InMemoryDB.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="443">
@@ -860,6 +856,27 @@
           <caret line="63" column="51" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/CookbookService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="22" column="89" lean-forward="true" selection-start-line="22" selection-start-column="89" selection-end-line="22" selection-end-column="89" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/Ingredient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+          <folding>
+            <element signature="e#460#461#0" expanded="true" />
+            <element signature="e#526#527#0" expanded="true" />
           </folding>
         </state>
       </provider>

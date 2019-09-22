@@ -17,4 +17,9 @@ public class Ingredient {
         this.ingredient_id = id;
         id++;
     }
+
+    @Override
+    public String toString() {
+        return name +" ("+quantity + "g, "+calories+"kcal)";
+    }
 }

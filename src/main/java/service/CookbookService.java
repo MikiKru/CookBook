@@ -1,9 +1,12 @@
 package service;
 
+import javafx.collections.FXCollections;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import model.Recipe;
+
+import java.util.Arrays;
 
 public class CookbookService {
     public void setSelectedRecipe(
@@ -16,5 +19,7 @@ public class CookbookService {
         tf_level.setText(recipe.getLevel().name());
         tf_type.setText(recipe.getType().name());
         tf_time.setText(String.valueOf(recipe.getPrepareTime()));
+        // przypisanie listy składników do LV
+        tf_ingredients.setItems(FXCollections.observableArrayList(Arrays.asList(recipe.getIngredients())));
     }
 }

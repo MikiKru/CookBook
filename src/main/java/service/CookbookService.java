@@ -17,7 +17,9 @@ import model.enums.Type;
 import utility.InMemoryDB;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Optional;
 
 public class CookbookService {
@@ -122,7 +124,13 @@ public class CookbookService {
         if(validRecipe(e_title, e_description, e_time, e_meal, e_level, e_type)){
             // utworzenie nowej receptury
             Recipe recipe = new Recipe(e_title.getText(), e_description.getText(), e_time.getValue(), imagePath,
-                    (Meal) e_meal.getValue(), (Level) e_level.getValue(), (Type) e_type.getValue(), null);
+                    (Meal) e_meal.getValue(), (Level) e_level.getValue(), (Type) e_type.getValue(),
+                    new ArrayList<Ingredient>(Arrays.asList(new Ingredient("Y",1,1))));
+            if(imagePath == null){
+                recipe.setImagePath("img/intro.png");
+            } else {
+                recipe.setImagePath(imagePath);
+            }
             // zapisanie receptury do tablicy receptur
             InMemoryDB.recipes.add(recipe);
             CookbookController.recipes_fx.clear();

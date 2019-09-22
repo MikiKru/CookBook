@@ -78,7 +78,7 @@
                <content>
                   <VBox prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <TableView fx:id="tbl_recipes" prefHeight="178.0" prefWidth="600.0">
+                        <TableView fx:id="tbl_recipes" onMouseClicked="#selectRowAction" prefHeight="178.0" prefWidth="600.0">
                           <columns>
                             <TableColumn fx:id="c_title" prefWidth="75.0" text="tytuł" />
                               <TableColumn fx:id="c_description" prefWidth="75.0" text="opis" />

@@ -124,6 +124,7 @@ public class CookbookController {
         cookbookService.deleteRecipe(recipeToDelete, recipes_fx);
         // odświeżenie tabelki
         cookbookService.setTableItems(tbl_recipes, recipes_fx);
+        btn_delete.setDisable(true);
     }
 
     @FXML

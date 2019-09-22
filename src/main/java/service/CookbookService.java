@@ -115,8 +115,11 @@ public class CookbookService {
         }
         return true;
     }
-    public void saveRecipe(){
-
+    public void saveRecipe(TextField e_title, TextArea e_description, Spinner<Integer> e_time,
+                           ComboBox e_meal, ComboBox e_level, ComboBox e_type){
+        if(validRecipe(e_title, e_description, e_time, e_meal, e_level, e_type)){
+            System.out.println("OK");
+        }
     }
 
 }

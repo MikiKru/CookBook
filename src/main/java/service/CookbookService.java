@@ -68,8 +68,7 @@ public class CookbookService {
         fileChooser.setTitle("Wybierz zdjęcie");
         fileChooser.setInitialDirectory(new File("C:\\Users\\PROXIMO\\Desktop\\Cookbook\\Cookbook\\src\\main\\resources\\img"));
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("png", "*.png"),
-                new FileChooser.ExtensionFilter("jpg", "*.jpg")
+                new FileChooser.ExtensionFilter("obrazy", "*.png", "*.jpg", "*.jpeg")
         );
         File file = fileChooser.showOpenDialog(new Stage());
         if(file != null) {
@@ -84,6 +83,4 @@ public class CookbookService {
         }
         return null;
     }
-
-
 }

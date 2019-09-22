@@ -85,9 +85,12 @@ public class CookbookController {
     private Button btn_save;
     @FXML
     private Button btn_delete;
+    @FXML
+    private ListView<String> lv_ingredientsView;
 
     // obiekty globalne
     public static ObservableList<Recipe> recipes_fx = FXCollections.observableArrayList();
+    public static ObservableList<Ingredient> ingredients_fx = FXCollections.observableArrayList();
     private WindowService windowService;
     private CookbookService cookbookService;
     private Recipe recipeToDelete;
@@ -112,6 +115,7 @@ public class CookbookController {
         cookbookService.setLevelItems(e_level);
         // konfiguracja spinera
         e_time.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(5, 180, 1, 5));
+        // wprowadzenie listy składników do combo
 
     }
 

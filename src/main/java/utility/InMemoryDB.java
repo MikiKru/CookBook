@@ -19,6 +19,15 @@ public class InMemoryDB {
                     new User("test2","test2")
             )
     );
+    public static List<Ingredient> ingredients = new ArrayList<>(
+            Arrays.asList(
+                    new Ingredient("chleb", 100, 200),
+                    new Ingredient("mleko", 100, 50),
+                    new Ingredient("ziemniaki", 100, 300),
+                    new Ingredient("cebula", 100, 120)
+
+            )
+    );
     public static List<Recipe> recipes = new ArrayList<>(
             Arrays.asList(
                     new Recipe("Bigos","???", 120, "/img/bigos.jpg", Meal.kolacja, Level.średni, Type.tradycyjny,

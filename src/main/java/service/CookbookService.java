@@ -138,5 +138,13 @@ public class CookbookService {
             setTableItems(tbl_recipes, CookbookController.recipes_fx);
         }
     }
+    public void setIngredientsCombo(ComboBox e_ingredients, ArrayList<Ingredient> ingredients){
+        CookbookController.ingredients_fx.addAll(ingredients);
+        e_ingredients.setItems(CookbookController.ingredients_fx);
+    }
+    public void updateIngredientsCombo(ComboBox e_ingredients,Ingredient ingredient){
+        CookbookController.ingredients_fx.remove(ingredient);
+        e_ingredients.setItems(CookbookController.ingredients_fx);
+    }
 
 }

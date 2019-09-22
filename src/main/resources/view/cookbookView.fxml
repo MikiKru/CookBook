@@ -102,6 +102,7 @@
                               <ImageView fx:id="e_view" fitHeight="62.0" fitWidth="98.0" layoutX="476.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" />
                               <Button fx:id="btn_save" layoutX="458.0" layoutY="116.0" mnemonicParsing="false" onAction="#saveRecipeAction" prefHeight="26.0" prefWidth="134.0" text="dodaj przepis" />
                               <Button fx:id="btn_delete" disable="true" layoutX="458.0" layoutY="149.0" mnemonicParsing="false" onAction="#deleteRecipeAction" prefHeight="26.0" prefWidth="134.0" style="-fx-background-color: red;" text="usuń przepis" textFill="WHITE" />
+                              <ListView fx:id="lv_ingredientsView" layoutX="599.0" layoutY="4.0" prefHeight="169.0" prefWidth="234.0" />
                            </children>
                         </AnchorPane>
                      </children>

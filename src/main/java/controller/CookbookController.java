@@ -105,6 +105,10 @@ public class CookbookController {
                 c_level, c_type, c_ingredients);
         // wprowadzenie danych do tabeli
         cookbookService.setTableItems(tbl_recipes, recipes_fx);
+        // wprowadzenie danych do combo
+        cookbookService.setMealItems(e_meal);
+        cookbookService.setTypeItems(e_type);
+        cookbookService.setLevelItems(e_level);
     }
 
     @FXML
@@ -130,12 +134,15 @@ public class CookbookController {
     void uploadImageAction(ActionEvent event) {
         cookbookService.uploadFile(e_view);
     }
+    @FXML
+    void saveRecipeAction(ActionEvent event) {
+
+    }
+
 
 
     @FXML
     void logoutAction(ActionEvent event) { }
-    @FXML
-    void saveRecipeAction(ActionEvent event) { }
 
     @FXML
     void addIngredientAction(ActionEvent event) { }

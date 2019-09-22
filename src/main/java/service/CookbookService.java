@@ -102,5 +102,21 @@ public class CookbookService {
         types.addAll(Type.values());
         e_type.setItems(types);
     }
+    public boolean validRecipe(TextField e_title, TextArea e_description, Spinner<Integer> e_time,
+                               ComboBox e_meal, ComboBox e_level, ComboBox e_type){
+        if(e_title.getText().equals("") || e_description.getText().equals("") || e_time.getValue() == null ||
+        e_meal.getValue() == null || e_level.getValue() == null || e_type.getValue() == null){
+            new WindowService().getAlert(
+                    Alert.AlertType.ERROR,
+                    "Błąd dodawania receptury",
+                    "Błąd dodawania receptury",
+                    "Należy uzupełnić wszystkie wymagane pola");
+            return false;
+        }
+        return true;
+    }
+    public void saveRecipe(){
+
+    }
 
 }

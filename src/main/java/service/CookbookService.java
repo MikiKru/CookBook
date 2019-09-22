@@ -120,12 +120,13 @@ public class CookbookService {
         return true;
     }
     public void saveRecipe(TextField e_title, TextArea e_description, Spinner<Integer> e_time,
-                           ComboBox e_meal, ComboBox e_level, ComboBox e_type, String imagePath, TableView tbl_recipes){
+                           ComboBox e_meal, ComboBox e_level, ComboBox e_type, String imagePath, TableView tbl_recipes,
+                           ListView lv_ingredientsView){
         if(validRecipe(e_title, e_description, e_time, e_meal, e_level, e_type)){
             // utworzenie nowej receptury
             Recipe recipe = new Recipe(e_title.getText(), e_description.getText(), e_time.getValue(), imagePath,
                     (Meal) e_meal.getValue(), (Level) e_level.getValue(), (Type) e_type.getValue(),
-                    new ArrayList<Ingredient>(Arrays.asList(new Ingredient("Y",1,1))));
+                    lv_ingredientsView.getItems());
             if(imagePath == null){
                 recipe.setImagePath("img/intro.png");
             } else {

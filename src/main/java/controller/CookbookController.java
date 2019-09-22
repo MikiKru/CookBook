@@ -145,7 +145,8 @@ public class CookbookController {
     }
     @FXML
     void saveRecipeAction(ActionEvent event) {
-        cookbookService.saveRecipe(e_title,e_description,e_time,e_meal,e_level,e_type, imagePath, tbl_recipes);
+        cookbookService.saveRecipe(e_title,e_description,e_time,e_meal,e_level,e_type,
+                imagePath, tbl_recipes, lv_ingredientsView);
     }
 
     @FXML

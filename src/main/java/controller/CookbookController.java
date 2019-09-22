@@ -90,7 +90,8 @@ public class CookbookController {
     private ObservableList<Recipe> recipes_fx = FXCollections.observableArrayList();
     private WindowService windowService;
     private CookbookService cookbookService;
-    Recipe recipeToDelete;
+    private Recipe recipeToDelete;
+    private String imagePath;
 
     public void initialize(){
         windowService = new WindowService();
@@ -135,11 +136,11 @@ public class CookbookController {
     }
     @FXML
     void uploadImageAction(ActionEvent event) {
-        cookbookService.uploadFile(e_view);
+        imagePath = cookbookService.uploadFile(e_view);
     }
     @FXML
     void saveRecipeAction(ActionEvent event) {
-        cookbookService.saveRecipe(e_title,e_description,e_time,e_meal,e_level,e_type);
+        cookbookService.saveRecipe(e_title,e_description,e_time,e_meal,e_level,e_type, imagePath, tbl_recipes);
     }
 
 

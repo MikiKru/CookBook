@@ -13,6 +13,7 @@ import model.Recipe;
 import model.enums.Level;
 import model.enums.Meal;
 import model.enums.Type;
+import utility.InMemoryDB;
 
 import java.io.File;
 import java.util.Arrays;
@@ -116,9 +117,16 @@ public class CookbookService {
         return true;
     }
     public void saveRecipe(TextField e_title, TextArea e_description, Spinner<Integer> e_time,
-                           ComboBox e_meal, ComboBox e_level, ComboBox e_type){
+                           ComboBox e_meal, ComboBox e_level, ComboBox e_type, String imagePath, TableView tbl_recipes){
         if(validRecipe(e_title, e_description, e_time, e_meal, e_level, e_type)){
-            System.out.println("OK");
+            // utworzenie nowej receptury
+            Recipe recipe = new Recipe(e_title.getText(), e_description.getText(), e_time.getValue(), imagePath,
+                    (Meal) e_meal.getValue(), (Level) e_level.getValue(), (Type) e_type.getValue(), null);
+            // zapisanie receptury do tablicy receptur
+            InMemoryDB.recipes.add(recipe);
+            ObservableList<Recipe> recipes_fx = FXCollections.observableArrayList();
+            recipes_fx.addAll(InMemoryDB.recipes);
+            setTableItems(tbl_recipes, recipes_fx);
         }
     }
 

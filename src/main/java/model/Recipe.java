@@ -41,83 +41,8 @@ public class Recipe {
         id++;
     }
 
-    public static int getId() {
-        return id;
-    }
-
-    public static void setId(int id) {
-        Recipe.id = id;
-    }
-
-    public int getRecipe_id() {
-        return recipe_id;
-    }
-
-    public void setRecipe_id(int recipe_id) {
-        this.recipe_id = recipe_id;
-    }
-
-    public String getTitle() {
+    @Override
+    public String toString() {
         return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public int getPrepareTime() {
-        return prepareTime;
-    }
-
-    public void setPrepareTime(int prepareTime) {
-        this.prepareTime = prepareTime;
-    }
-
-    public String getImagePath() {
-        return imagePath;
-    }
-
-    public void setImagePath(String imagePath) {
-        this.imagePath = imagePath;
-    }
-
-    public Meal getMeal() {
-        return meal;
-    }
-
-    public void setMeal(Meal meal) {
-        this.meal = meal;
-    }
-
-    public Level getLevel() {
-        return level;
-    }
-
-    public void setLevel(Level level) {
-        this.level = level;
-    }
-
-    public Type getType() {
-        return type;
-    }
-
-    public void setType(Type type) {
-        this.type = type;
-    }
-
-    public List<Ingredient> getIngredients() {
-        return ingredients;
-    }
-
-    public void setIngredients(List<Ingredient> ingredients) {
-        this.ingredients = ingredients;
     }
 }

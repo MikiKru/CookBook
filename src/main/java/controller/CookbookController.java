@@ -13,6 +13,8 @@ import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import model.Recipe;
+import service.CookbookService;
+import service.WindowService;
 import utility.InMemoryDB;
 
 import java.io.File;
@@ -43,8 +45,12 @@ public class CookbookController {
     private ComboBox<Recipe> cb_recipe;
     // obiekty globalne
     private ObservableList<Recipe> recipes_fx = FXCollections.observableArrayList();
+    private WindowService windowService;
+    private CookbookService cookbookService;
 
     public void initialize(){
+        windowService = new WindowService();
+        cookbookService = new CookbookService();
         // wprowadź obiekty z listy recipes do recipes_fx
         recipes_fx.addAll(InMemoryDB.recipes);
         // wprowadzenie tytułów do combo
@@ -52,8 +58,10 @@ public class CookbookController {
     }
 
     @FXML
-    void getReciepeAction(ActionEvent event) {
-
+    void getRecipeAction(ActionEvent event) {
+        Recipe selectedRecipe = cb_recipe.getValue();
+        cookbookService.setSelectedRecipe(selectedRecipe,
+                tf_title,ta_description,tf_type,tf_level,tf_meal,tf_time,tf_ingredients);
     }
 
     @FXML

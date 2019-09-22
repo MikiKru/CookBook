@@ -39,7 +39,7 @@
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <Separator layoutX="300.0" orientation="VERTICAL" prefHeight="347.0" prefWidth="3.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" />
-                        <ComboBox fx:id="cb_recipe" layoutX="56.0" layoutY="24.0" onAction="#getReciepeAction" prefHeight="26.0" prefWidth="199.0" promptText="wyszukaj przepis" />
+                        <ComboBox fx:id="cb_recipe" layoutX="56.0" layoutY="24.0" onAction="#getRecipeAction" prefHeight="26.0" prefWidth="199.0" promptText="wyszukaj przepis" />
                         <VBox layoutX="313.0" layoutY="24.0" prefHeight="298.0" prefWidth="270.0">
                            <children>
                               <Label prefHeight="18.0" prefWidth="345.0" text="rodzaj potrawy" textAlignment="CENTER" />

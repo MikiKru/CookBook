@@ -63,7 +63,7 @@ public class CookbookService {
         }
     }
     // okienko dialogowa do upload-u plików
-    public void uploadFile(ImageView e_view){
+    public String uploadFile(ImageView e_view){
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Wybierz zdjęcie");
         fileChooser.setInitialDirectory(new File("C:\\Users\\PROXIMO\\Desktop\\Cookbook\\Cookbook\\src\\main\\resources\\img"));
@@ -80,7 +80,7 @@ public class CookbookService {
             // wyświetlenie obrazka do podglądu
             e_view.setImage(new Image(imagepath));
             // zapis ścieżki do obiektu Recipe
-            // ???
+            return imagepath;
         }
     }
 

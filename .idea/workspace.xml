@@ -4,6 +4,7 @@
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/CookbookController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/CookbookController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/service/CookbookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/service/CookbookService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/cookbookView.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/cookbookView.fxml" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -61,11 +62,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controller/CookbookController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="102" column="46" selection-start-line="102" selection-start-column="46" selection-end-line="102" selection-end-column="46" />
+            <state relative-caret-position="425">
+              <caret line="104" column="63" lean-forward="true" selection-start-line="104" selection-start-column="63" selection-end-line="104" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -73,13 +74,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/service/CookbookService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="36" column="12" lean-forward="true" selection-start-line="36" selection-start-column="12" selection-end-line="37" selection-end-column="78" />
+            <state relative-caret-position="275">
+              <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2167#2168#0" expanded="true" />
+                <element signature="e#2193#2194#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,8 +105,8 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/view/cookbookView.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1125">
-              <caret line="45" column="47" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
+            <state relative-caret-position="1075">
+              <caret line="43" column="47" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -216,8 +219,8 @@
         <option value="$PROJECT_DIR$/src/main/java/model/Recipe.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/Ingredient.java" />
         <option value="$PROJECT_DIR$/src/main/java/utility/InMemoryDB.java" />
-        <option value="$PROJECT_DIR$/src/main/java/service/CookbookService.java" />
         <option value="$PROJECT_DIR$/src/main/java/controller/CookbookController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/service/CookbookService.java" />
       </list>
     </option>
   </component>
@@ -524,12 +527,12 @@
       <workItem from="1359379250712" duration="1302000" />
       <workItem from="1568543880988" duration="10459000" />
       <workItem from="1569048920147" duration="26650000" />
-      <workItem from="1569141200328" duration="3094000" />
+      <workItem from="1569141200328" duration="3670000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41505000" />
+    <option name="totallyTimeSpent" value="42081000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -544,7 +547,7 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21954674" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.11473088" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -816,8 +819,8 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/view/cookbookView.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="45" column="47" selection-start-line="45" selection-start-column="47" selection-end-line="45" selection-end-column="47" />
+        <state relative-caret-position="1075">
+          <caret line="43" column="47" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -871,22 +874,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/service/CookbookService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/controller/CookbookController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="36" column="12" lean-forward="true" selection-start-line="36" selection-start-column="12" selection-end-line="37" selection-end-column="78" />
+        <state relative-caret-position="425">
+          <caret line="104" column="63" lean-forward="true" selection-start-line="104" selection-start-column="63" selection-end-line="104" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/CookbookController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/service/CookbookService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
-          <caret line="102" column="46" selection-start-line="102" selection-start-column="46" selection-end-line="102" selection-end-column="46" />
+          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2167#2168#0" expanded="true" />
+            <element signature="e#2193#2194#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -101,8 +101,8 @@ public class CookbookController {
         // przypiać pola obiektu Recipe do kolumn tabeli
         cookbookService.setTableProperty(c_title, c_description, c_time, c_meal,
                 c_level, c_type, c_ingredients);
-        // wprowadzenie danych do tebeli
-
+        // wprowadzenie danych do tabeli
+        cookbookService.setTableItems(tbl_recipes, recipes_fx);
     }
 
     @FXML

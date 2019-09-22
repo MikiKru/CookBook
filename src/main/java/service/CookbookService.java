@@ -2,10 +2,7 @@ package service;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -43,5 +40,8 @@ public class CookbookService {
         c_level.setCellValueFactory(new PropertyValueFactory<>("level"));
         c_type.setCellValueFactory(new PropertyValueFactory<>("type"));
         c_ingredients.setCellValueFactory(new PropertyValueFactory<>("ingredients"));
+    }
+    public void setTableItems(TableView tbl_recipes, ObservableList recipes_fx){
+        tbl_recipes.setItems(recipes_fx);
     }
 }

@@ -8,7 +8,6 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Spinner?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
@@ -22,7 +21,7 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CookbookController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="841.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CookbookController">
    <children>
       <MenuBar maxWidth="1.7976931348623157E308">
         <menus>
@@ -42,7 +41,6 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <Separator layoutX="300.0" orientation="VERTICAL" prefHeight="347.0" prefWidth="3.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" />
                         <ComboBox fx:id="cb_recipe" layoutX="56.0" layoutY="24.0" onAction="#getRecipeAction" prefHeight="26.0" prefWidth="199.0" promptText="wyszukaj przepis" />
                         <VBox layoutX="313.0" layoutY="24.0" prefHeight="298.0" prefWidth="270.0">
                            <children>
@@ -88,7 +86,7 @@
                               <TableColumn fx:id="c_meal" prefWidth="75.0" text="rodzaj" />
                               <TableColumn fx:id="c_level" prefWidth="75.0" text="trudność" />
                               <TableColumn fx:id="c_type" prefWidth="75.0" text="typ" />
-                              <TableColumn fx:id="c_ingredients" prefWidth="148.0" text="składniki" />
+                              <TableColumn fx:id="c_ingredients" prefWidth="389.6" text="składniki" />
                           </columns>
                         </TableView>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
@@ -103,7 +101,7 @@
                               <Button fx:id="e_image" layoutX="458.0" layoutY="3.0" mnemonicParsing="false" onAction="#uploadImageAction" prefHeight="26.0" prefWidth="134.0" text="dodaj zdjęcie" />
                               <ImageView fx:id="e_view" fitHeight="62.0" fitWidth="98.0" layoutX="476.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" />
                               <Button fx:id="btn_save" layoutX="458.0" layoutY="116.0" mnemonicParsing="false" onAction="#saveRecipeAction" prefHeight="26.0" prefWidth="134.0" text="dodaj przepis" />
-                              <Button fx:id="btn_delete" layoutX="458.0" layoutY="149.0" mnemonicParsing="false" onAction="#deleteRecipeAction" prefHeight="26.0" prefWidth="134.0" text="usuń przepis" />
+                              <Button fx:id="btn_delete" disable="true" layoutX="458.0" layoutY="149.0" mnemonicParsing="false" onAction="#deleteRecipeAction" prefHeight="26.0" prefWidth="134.0" style="-fx-background-color: red;" text="usuń przepis" textFill="WHITE" />
                            </children>
                         </AnchorPane>
                      </children>

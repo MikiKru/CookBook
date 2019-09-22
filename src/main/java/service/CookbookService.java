@@ -1,5 +1,6 @@
 package service;
 
+import controller.CookbookController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.*;
@@ -124,9 +125,8 @@ public class CookbookService {
                     (Meal) e_meal.getValue(), (Level) e_level.getValue(), (Type) e_type.getValue(), null);
             // zapisanie receptury do tablicy receptur
             InMemoryDB.recipes.add(recipe);
-            ObservableList<Recipe> recipes_fx = FXCollections.observableArrayList();
-            recipes_fx.addAll(InMemoryDB.recipes);
-            setTableItems(tbl_recipes, recipes_fx);
+            CookbookController.recipes_fx.addAll(InMemoryDB.recipes);
+            setTableItems(tbl_recipes, CookbookController.recipes_fx);
         }
     }
 

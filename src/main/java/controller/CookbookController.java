@@ -87,7 +87,7 @@ public class CookbookController {
     private Button btn_delete;
 
     // obiekty globalne
-    private ObservableList<Recipe> recipes_fx = FXCollections.observableArrayList();
+    public static ObservableList<Recipe> recipes_fx = FXCollections.observableArrayList();
     private WindowService windowService;
     private CookbookService cookbookService;
     private Recipe recipeToDelete;

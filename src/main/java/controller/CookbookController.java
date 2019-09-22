@@ -5,12 +5,16 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import model.Ingredient;
 import model.Recipe;
+import model.enums.Level;
+import model.enums.Meal;
+import model.enums.Type;
 import service.CookbookService;
 import service.WindowService;
 import utility.InMemoryDB;
@@ -43,35 +47,35 @@ public class CookbookController {
     @FXML
     private ComboBox<Recipe> cb_recipe;
     @FXML
-    private TableView<?> tbl_recipes;
+    private TableView<Recipe> tbl_recipes;
     @FXML
-    private TableColumn<?, ?> c_title;
+    private TableColumn<Recipe, String> c_title;
     @FXML
-    private TableColumn<?, ?> c_description;
+    private TableColumn<Recipe, String> c_description;
     @FXML
-    private TableColumn<?, ?> c_time;
+    private TableColumn<Recipe, Integer> c_time;
     @FXML
-    private TableColumn<?, ?> c_meal;
+    private TableColumn<Recipe, Meal> c_meal;
     @FXML
-    private TableColumn<?, ?> c_level;
+    private TableColumn<Recipe, Level> c_level;
     @FXML
-    private TableColumn<?, ?> c_type;
+    private TableColumn<Recipe, Type> c_type;
     @FXML
-    private TableColumn<?, ?> c_ingredients;
+    private TableColumn<Recipe, String> c_ingredients;
     @FXML
     private TextField e_title;
     @FXML
     private TextArea e_description;
     @FXML
-    private Spinner<?> e_time;
+    private Spinner<Integer> e_time;
     @FXML
-    private ComboBox<?> e_meal;
+    private ComboBox<Meal> e_meal;
     @FXML
-    private ComboBox<?> e_level;
+    private ComboBox<Level> e_level;
     @FXML
-    private ComboBox<?> e_type;
+    private ComboBox<Type> e_type;
     @FXML
-    private ComboBox<?> e_ingredients;
+    private ComboBox<String> e_ingredients;
     @FXML
     private Button e_image;
     @FXML
@@ -94,6 +98,11 @@ public class CookbookController {
                 .sorted(Comparator.comparing(Recipe::getTitle)).collect(Collectors.toList()));
         // wprowadzenie tytułów do combo
         cb_recipe.setItems(recipes_fx);
+        // przypiać pola obiektu Recipe do kolumn tabeli
+        cookbookService.setTableProperty(c_title, c_description, c_time, c_meal,
+                c_level, c_type, c_ingredients);
+        // wprowadzenie danych do tebeli
+
     }
 
     @FXML

@@ -3,8 +3,10 @@ package service;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import model.Ingredient;
@@ -30,5 +32,16 @@ public class CookbookService {
         tf_ingredients.setItems(ingredients);
         // ustawienie obrazka na IV
         iv_image.setImage(new Image(recipe.getImagePath()));
+    }
+    public void setTableProperty(
+            TableColumn c_title, TableColumn c_description, TableColumn c_time, TableColumn c_meal,
+            TableColumn c_level, TableColumn c_type, TableColumn c_ingredients){
+        c_title.setCellValueFactory(new PropertyValueFactory<>("title"));
+        c_description.setCellValueFactory(new PropertyValueFactory<>("description"));
+        c_time.setCellValueFactory(new PropertyValueFactory<>("prepareTime"));
+        c_meal.setCellValueFactory(new PropertyValueFactory<>("meal"));
+        c_level.setCellValueFactory(new PropertyValueFactory<>("level"));
+        c_type.setCellValueFactory(new PropertyValueFactory<>("type"));
+        c_ingredients.setCellValueFactory(new PropertyValueFactory<>("ingredients"));
     }
 }

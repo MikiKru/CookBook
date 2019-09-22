@@ -90,6 +90,7 @@ public class CookbookController {
     private ObservableList<Recipe> recipes_fx = FXCollections.observableArrayList();
     private WindowService windowService;
     private CookbookService cookbookService;
+    Recipe recipeToDelete;
 
     public void initialize(){
         windowService = new WindowService();
@@ -114,8 +115,17 @@ public class CookbookController {
     }
     @FXML
     void selectRowAction(MouseEvent event) {
-
+        recipeToDelete = cookbookService.getRecipeFromSelectedRow(tbl_recipes);
+        // aktywujemy przycisk
+        btn_delete.setDisable(false);
     }
+    @FXML
+    void deleteRecipeAction(ActionEvent event) {
+        cookbookService.deleteRecipe(recipeToDelete, recipes_fx);
+        // odświeżenie tabelki
+        cookbookService.setTableItems(tbl_recipes, recipes_fx);
+    }
+
     @FXML
     void logoutAction(ActionEvent event) { }
     @FXML
@@ -124,8 +134,7 @@ public class CookbookController {
     void uploadImageAction(ActionEvent event) { }
     @FXML
     void addIngredientAction(ActionEvent event) { }
-    @FXML
-    void deleteRecipeAction(ActionEvent event) { }
+
 
 
 }

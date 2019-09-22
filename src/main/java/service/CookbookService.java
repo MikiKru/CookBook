@@ -49,12 +49,12 @@ public class CookbookService {
     }
 
     // metoda pobierająca obiekt z wybranego rekordu
-    public Recipe getIdFromSelectedRow(TableView<Recipe> tbl_recipe) {
+    public Recipe getRecipeFromSelectedRow(TableView<Recipe> tbl_recipe) {
         return tbl_recipe.getSelectionModel().getSelectedItem();
     }
 
     // metoda usuwająca recepture po obiekcie Recipe
-    public void deleteRecipeById(Recipe recipe, ObservableList recipes_fx) {
+    public void deleteRecipe(Recipe recipe, ObservableList recipes_fx) {
         if (recipe != null) {
             recipes_fx.remove(recipe);
         }

@@ -110,7 +110,7 @@ public class CookbookController {
         cookbookService.setTypeItems(e_type);
         cookbookService.setLevelItems(e_level);
         // konfiguracja spinera
-        e_time.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 180, 1));
+        e_time.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(5, 180, 1, 5));
 
     }
 

@@ -12,6 +12,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import model.Ingredient;
 import model.Recipe;
 import service.CookbookService;
 import service.WindowService;
@@ -35,7 +36,7 @@ public class CookbookController {
     @FXML
     private TextField tf_time;
     @FXML
-    private ListView<?> tf_ingredients;
+    private ListView<Ingredient> tf_ingredients;
     @FXML
     private TextField tf_title;
     @FXML
@@ -63,7 +64,7 @@ public class CookbookController {
     void getRecipeAction(ActionEvent event) {
         Recipe selectedRecipe = cb_recipe.getValue();
         cookbookService.setSelectedRecipe(selectedRecipe,
-                tf_title,ta_description,tf_type,tf_level,tf_meal,tf_time,tf_ingredients);
+                tf_title,ta_description,tf_type,tf_level,tf_meal,tf_time,tf_ingredients, iv_image);
     }
 
     @FXML

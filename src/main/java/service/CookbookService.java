@@ -10,6 +10,9 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import model.Ingredient;
 import model.Recipe;
+import model.enums.Level;
+import model.enums.Meal;
+import model.enums.Type;
 
 import java.io.File;
 import java.util.Arrays;
@@ -83,4 +86,21 @@ public class CookbookService {
         }
         return null;
     }
+    // wprowadzenie danych do combo
+    public void setMealItems(ComboBox e_meal){
+        ObservableList<Meal> meals = FXCollections.observableArrayList();
+        meals.addAll(Meal.values());
+        e_meal.setItems(meals);
+    }
+    public void setLevelItems(ComboBox e_level){
+        ObservableList<Level> levels = FXCollections.observableArrayList();
+        levels.addAll(Level.values());
+        e_level.setItems(levels);
+    }
+    public void setTypeItems(ComboBox e_type){
+        ObservableList<Type> types = FXCollections.observableArrayList();
+        types.addAll(Type.values());
+        e_type.setItems(types);
+    }
+
 }

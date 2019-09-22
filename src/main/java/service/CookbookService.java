@@ -140,10 +140,10 @@ public class CookbookService {
             // czyszczenie pól
             e_title.clear();
             e_description.clear();
-            e_level.setItems(null);
-            e_type.setItems(null);
-            e_meal.setItems(null);
-            e_ingredients.setItems(null);
+            e_level.setValue(null);
+            e_type.setValue(null);
+            e_meal.setValue(null);
+            e_ingredients.setValue(null);
             lv_ingredientsView.setItems(null);
             e_time.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(5, 180, 1, 5));
             e_view.setImage(null);

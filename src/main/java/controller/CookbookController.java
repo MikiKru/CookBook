@@ -19,6 +19,7 @@ import utility.InMemoryDB;
 
 import java.io.File;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.List;
@@ -51,8 +52,9 @@ public class CookbookController {
     public void initialize(){
         windowService = new WindowService();
         cookbookService = new CookbookService();
-        // wprowadź obiekty z listy recipes do recipes_fx
-        recipes_fx.addAll(InMemoryDB.recipes);
+        // wprowadź obiekty z listy recipes do recipes_fx posortowanie po tytułach a-z
+        recipes_fx.addAll(InMemoryDB.recipes.stream()
+                .sorted(Comparator.comparing(Recipe::getTitle)).collect(Collectors.toList()));
         // wprowadzenie tytułów do combo
         cb_recipe.setItems(recipes_fx);
     }

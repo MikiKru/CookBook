@@ -24,8 +24,9 @@ public class InMemoryDB {
                     new Recipe("Bigos","???", 120, "/", Meal.kolacja, Level.średni, Type.tradycyjny,
                             new ArrayList<Ingredient>(Arrays.asList(new Ingredient("kapusta kiszona", 100, 300), new Ingredient("kiełbasa", 100, 100)))),
                     new Recipe("Jajecznica","???", 15, "/", Meal.śniadanie, Level.łatwy, Type.tradycyjny,
-                            new ArrayList<Ingredient>(Arrays.asList(new Ingredient("jaja", 3, 200), new Ingredient("kiełbasa", 100, 100))))
-
+                            new ArrayList<Ingredient>(Arrays.asList(new Ingredient("jaja", 3, 200), new Ingredient("kiełbasa", 100, 100)))),
+                    new Recipe("Arbuz w kostkach","???", 10, "/", Meal.deser, Level.łatwy, Type.wegański,
+                            new ArrayList<Ingredient>(Arrays.asList(new Ingredient("arbuz", 1, 100))))
             )
     );
 }

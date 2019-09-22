@@ -4,10 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
@@ -45,6 +42,45 @@ public class CookbookController {
     private ImageView iv_image;
     @FXML
     private ComboBox<Recipe> cb_recipe;
+    @FXML
+    private TableView<?> tbl_recipes;
+    @FXML
+    private TableColumn<?, ?> c_title;
+    @FXML
+    private TableColumn<?, ?> c_description;
+    @FXML
+    private TableColumn<?, ?> c_time;
+    @FXML
+    private TableColumn<?, ?> c_meal;
+    @FXML
+    private TableColumn<?, ?> c_level;
+    @FXML
+    private TableColumn<?, ?> c_type;
+    @FXML
+    private TableColumn<?, ?> c_ingredients;
+    @FXML
+    private TextField e_title;
+    @FXML
+    private TextArea e_description;
+    @FXML
+    private Spinner<?> e_time;
+    @FXML
+    private ComboBox<?> e_meal;
+    @FXML
+    private ComboBox<?> e_level;
+    @FXML
+    private ComboBox<?> e_type;
+    @FXML
+    private ComboBox<?> e_ingredients;
+    @FXML
+    private Button e_image;
+    @FXML
+    private ImageView e_view;
+    @FXML
+    private Button btn_save;
+    @FXML
+    private Button btn_delete;
+
     // obiekty globalne
     private ObservableList<Recipe> recipes_fx = FXCollections.observableArrayList();
     private WindowService windowService;
@@ -68,9 +104,15 @@ public class CookbookController {
     }
 
     @FXML
-    void logoutAction(ActionEvent event) {
-
-    }
+    void logoutAction(ActionEvent event) { }
+    @FXML
+    void saveRecipeAction(ActionEvent event) { }
+    @FXML
+    void uploadImageAction(ActionEvent event) { }
+    @FXML
+    void addIngredientAction(ActionEvent event) { }
+    @FXML
+    void deleteRecipeAction(ActionEvent event) { }
 
 
 }

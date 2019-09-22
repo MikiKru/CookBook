@@ -146,15 +146,15 @@ public class CookbookController {
     @FXML
     void saveRecipeAction(ActionEvent event) {
         cookbookService.saveRecipe(e_title,e_description,e_time,e_meal,e_level,e_type,
-                imagePath, tbl_recipes, lv_ingredientsView);
+                imagePath, tbl_recipes, lv_ingredientsView, e_ingredients, e_view);
     }
 
     @FXML
     void addIngredientAction(ActionEvent event) {
-//        cookbookService.updateIngredientsCombo(e_ingredients, e_ingredients.getValue());
         ObservableList<Ingredient> ingredients = lv_ingredientsView.getItems();
         ingredients.add(e_ingredients.getValue());
         lv_ingredientsView.setItems(ingredients);
+//        cookbookService.updateIngredientsCombo(e_ingredients, lv_ingredientsView, e_ingredients.getValue());
     }
     @FXML
     void logoutAction(ActionEvent event) { }

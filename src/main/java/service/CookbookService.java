@@ -121,7 +121,7 @@ public class CookbookService {
     }
     public void saveRecipe(TextField e_title, TextArea e_description, Spinner<Integer> e_time,
                            ComboBox e_meal, ComboBox e_level, ComboBox e_type, String imagePath, TableView tbl_recipes,
-                           ListView lv_ingredientsView){
+                           ListView lv_ingredientsView, ComboBox e_ingredients, ImageView e_view){
         if(validRecipe(e_title, e_description, e_time, e_meal, e_level, e_type)){
             // utworzenie nowej receptury
             Recipe recipe = new Recipe(e_title.getText(), e_description.getText(), e_time.getValue(), imagePath,
@@ -137,14 +137,25 @@ public class CookbookService {
             CookbookController.recipes_fx.clear();
             CookbookController.recipes_fx.addAll(InMemoryDB.recipes);
             setTableItems(tbl_recipes, CookbookController.recipes_fx);
+            // czyszczenie pól
+            e_title.clear();
+            e_description.clear();
+            e_level.setItems(null);
+            e_type.setItems(null);
+            e_meal.setItems(null);
+            e_ingredients.setItems(null);
+            lv_ingredientsView.setItems(null);
+            e_time.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(5, 180, 1, 5));
+            e_view.setImage(null);
+            //
         }
     }
     public void setIngredientsCombo(ComboBox e_ingredients, ArrayList<Ingredient> ingredients){
         CookbookController.ingredients_fx.addAll(ingredients);
         e_ingredients.setItems(CookbookController.ingredients_fx);
     }
-    public void updateIngredientsCombo(ComboBox e_ingredients,Ingredient ingredient){
-        CookbookController.ingredients_fx.remove(ingredient);
+    public void updateIngredientsCombo(ComboBox e_ingredients, ListView lv_ingredientsView, Ingredient ingredient){
+        CookbookController.ingredients_fx.removeAll(lv_ingredientsView.getItems());
         System.out.println(CookbookController.ingredients_fx);
         e_ingredients.setItems(CookbookController.ingredients_fx);
     }

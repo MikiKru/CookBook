@@ -6,9 +6,12 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import model.Ingredient;
 import model.Recipe;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.Optional;
 
@@ -57,6 +60,27 @@ public class CookbookService {
     public void deleteRecipe(Recipe recipe, ObservableList recipes_fx) {
         if (recipe != null) {
             recipes_fx.remove(recipe);
+        }
+    }
+    // okienko dialogowa do upload-u plików
+    public void uploadFile(ImageView e_view){
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Wybierz zdjęcie");
+        fileChooser.setInitialDirectory(new File("C:\\Users\\PROXIMO\\Desktop\\Cookbook\\Cookbook\\src\\main\\resources\\img"));
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("png", "*.png"),
+                new FileChooser.ExtensionFilter("jpg", "*.jpg")
+        );
+        File file = fileChooser.showOpenDialog(new Stage());
+        if(file != null) {
+            String imagepath = file.getPath();
+            String direct_path = "C:\\Users\\PROXIMO\\Desktop\\Cookbook\\Cookbook\\src\\main\\resources";
+            imagepath = imagepath.replace(direct_path, "");
+            System.out.println("file:"+imagepath);
+            // wyświetlenie obrazka do podglądu
+            e_view.setImage(new Image(imagepath));
+            // zapis ścieżki do obiektu Recipe
+            // ???
         }
     }
 

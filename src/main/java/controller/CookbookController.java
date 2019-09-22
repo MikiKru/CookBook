@@ -8,17 +8,21 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import model.Recipe;
 import utility.InMemoryDB;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.List;
 
 public class CookbookController {
-    @FXML
-    private ComboBox<String> cb_recipe;
+
     @FXML
     private TextField tf_type;
     @FXML
@@ -35,22 +39,27 @@ public class CookbookController {
     private TextArea ta_description;
     @FXML
     private ImageView iv_image;
+    @FXML
+    private ComboBox<Recipe> cb_recipe;
     // obiekty globalne
-    private ObservableList<String> recipes_title = FXCollections.observableArrayList();
-
-    @FXML
-    void getReciepeAction(ActionEvent event) { }
-
-    @FXML
-    void logoutAction(ActionEvent event) { }
+    private ObservableList<Recipe> recipes_fx = FXCollections.observableArrayList();
 
     public void initialize(){
         // wprowadź obiekty z listy recipes do recipes_fx
-        for(Recipe recipe : InMemoryDB.recipes){
-            recipes_title.add(recipe.getTitle());
-        }
+        recipes_fx.addAll(InMemoryDB.recipes);
         // wprowadzenie tytułów do combo
-        cb_recipe.setItems(recipes_title);
+        cb_recipe.setItems(recipes_fx);
+    }
+
+    @FXML
+    void getReciepeAction(ActionEvent event) {
 
     }
+
+    @FXML
+    void logoutAction(ActionEvent event) {
+
+    }
+
+
 }

@@ -82,6 +82,7 @@ public class CookbookService {
             // zapis ścieżki do obiektu Recipe
             return imagepath;
         }
+        return null;
     }
 
 

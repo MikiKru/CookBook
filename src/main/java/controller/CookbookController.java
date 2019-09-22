@@ -126,13 +126,17 @@ public class CookbookController {
         cookbookService.setTableItems(tbl_recipes, recipes_fx);
         btn_delete.setDisable(true);
     }
+    @FXML
+    void uploadImageAction(ActionEvent event) {
+        cookbookService.uploadFile(e_view);
+    }
+
 
     @FXML
     void logoutAction(ActionEvent event) { }
     @FXML
     void saveRecipeAction(ActionEvent event) { }
-    @FXML
-    void uploadImageAction(ActionEvent event) { }
+
     @FXML
     void addIngredientAction(ActionEvent event) { }
 

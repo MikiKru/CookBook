@@ -44,4 +44,7 @@ public class CookbookService {
     public void setTableItems(TableView tbl_recipes, ObservableList recipes_fx){
         tbl_recipes.setItems(recipes_fx);
     }
+    public int getIdFromSelectedRow(){
+        
+    }
 }

@@ -8,6 +8,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import model.Ingredient;
@@ -111,7 +112,10 @@ public class CookbookController {
         cookbookService.setSelectedRecipe(selectedRecipe,
                 tf_title,ta_description,tf_type,tf_level,tf_meal,tf_time,tf_ingredients, iv_image);
     }
+    @FXML
+    void selectRowAction(MouseEvent event) {
 
+    }
     @FXML
     void logoutAction(ActionEvent event) { }
     @FXML

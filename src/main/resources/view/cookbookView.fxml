@@ -93,7 +93,7 @@
                            <children>
                               <TextField fx:id="e_title" layoutY="1.0" prefHeight="26.0" prefWidth="220.0" promptText="podaj tytul" />
                               <TextArea fx:id="e_description" layoutY="27.0" prefHeight="102.0" prefWidth="219.0" promptText="podaj opis" />
-                              <Spinner fx:id="e_time" editable="true" layoutY="129.0" prefHeight="26.0" prefWidth="219.0" />
+                              <Spinner fx:id="e_time" layoutY="129.0" prefHeight="26.0" prefWidth="219.0" />
                               <ComboBox fx:id="e_meal" layoutX="246.0" layoutY="2.0" prefHeight="26.0" prefWidth="196.0" promptText="rodzaj" />
                               <ComboBox fx:id="e_level" layoutX="246.0" layoutY="38.0" prefHeight="26.0" prefWidth="196.0" promptText="trudność" />
                               <ComboBox fx:id="e_type" layoutX="246.0" layoutY="78.0" prefHeight="26.0" prefWidth="197.0" promptText="typ" />

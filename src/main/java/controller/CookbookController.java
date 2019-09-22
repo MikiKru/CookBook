@@ -109,6 +109,9 @@ public class CookbookController {
         cookbookService.setMealItems(e_meal);
         cookbookService.setTypeItems(e_type);
         cookbookService.setLevelItems(e_level);
+        // konfiguracja spinera
+        e_time.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 180, 1));
+
     }
 
     @FXML
@@ -136,7 +139,7 @@ public class CookbookController {
     }
     @FXML
     void saveRecipeAction(ActionEvent event) {
-
+        cookbookService.saveRecipe(e_title,e_description,e_time,e_meal,e_level,e_type);
     }
 
 

@@ -144,6 +144,7 @@ public class CookbookService {
     }
     public void updateIngredientsCombo(ComboBox e_ingredients,Ingredient ingredient){
         CookbookController.ingredients_fx.remove(ingredient);
+        System.out.println(CookbookController.ingredients_fx);
         e_ingredients.setItems(CookbookController.ingredients_fx);
     }
 

@@ -21,6 +21,7 @@ import service.WindowService;
 import utility.InMemoryDB;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.stream.Collector;
@@ -76,7 +77,7 @@ public class CookbookController {
     @FXML
     private ComboBox<Type> e_type;
     @FXML
-    private ComboBox<String> e_ingredients;
+    private ComboBox<Ingredient> e_ingredients;
     @FXML
     private Button e_image;
     @FXML
@@ -86,7 +87,7 @@ public class CookbookController {
     @FXML
     private Button btn_delete;
     @FXML
-    private ListView<String> lv_ingredientsView;
+    private ListView<Ingredient> lv_ingredientsView;
 
     // obiekty globalne
     public static ObservableList<Recipe> recipes_fx = FXCollections.observableArrayList();
@@ -116,7 +117,7 @@ public class CookbookController {
         // konfiguracja spinera
         e_time.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(5, 180, 1, 5));
         // wprowadzenie listy składników do combo
-
+        cookbookService.setIngredientsCombo(e_ingredients, (ArrayList<Ingredient>) InMemoryDB.ingredients);
     }
 
     @FXML
@@ -147,13 +148,16 @@ public class CookbookController {
         cookbookService.saveRecipe(e_title,e_description,e_time,e_meal,e_level,e_type, imagePath, tbl_recipes);
     }
 
-
-
+    @FXML
+    void addIngredientAction(ActionEvent event) {
+//        cookbookService.updateIngredientsCombo(e_ingredients, e_ingredients.getValue());
+        ObservableList<Ingredient> ingredients = lv_ingredientsView.getItems();
+        ingredients.add(e_ingredients.getValue());
+        lv_ingredientsView.setItems(ingredients);
+    }
     @FXML
     void logoutAction(ActionEvent event) { }
 
-    @FXML
-    void addIngredientAction(ActionEvent event) { }
 
 
 
